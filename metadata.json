@@ -1,0 +1,6 @@
+{
+  "name": "Chakra Flow",
+  "description": "Ferramenta profissional para terapeutas holísticos registrarem atendimentos de bioalinhamento energético e gerarem laudos clínicos em PDF A4.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

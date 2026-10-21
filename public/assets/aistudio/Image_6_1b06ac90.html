@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-BR"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Plus+Jakarta+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "on-secondary-container": "#baabf3", "secondary-fixed": "#e7deff", "on-error-container": "#ffdad6", "on-primary-container": "#3c1989", "surface-container-low": "#1d1a26", "surface-container": "#211e2a", "inverse-surface": "#e7dff1", "on-tertiary-fixed-variant": "#005236", "on-tertiary-container": "#003d28", "background": "#15121e", "surface-bright": "#3b3745", "on-secondary-fixed": "#1e0e4e", "primary-container": "#a78bfa", "on-secondary-fixed-variant": "#4a3d7c", "on-surface": "#e7dff1", "on-tertiary-fixed": "#002113", "surface-container-high": "#2c2835", "surface-container-highest": "#363340", "tertiary": "#4edea3", "primary-fixed-dim": "#cebdff", "on-error": "#690005", "error-container": "#93000a", "primary": "#cebdff", "secondary": "#ccbeff", "surface-variant": "#363340", "error": "#ffb4ab", "on-tertiary": "#003824", "surface-container-lowest": "#0f0c18", "on-surface-variant": "#cac4d4", "surface-dim": "#15121e", "on-primary-fixed-variant": "#4f319c", "tertiary-fixed-dim": "#4edea3", "inverse-primary": "#674bb5", "tertiary-container": "#00b37c", "on-primary-fixed": "#21005e", "outline": "#948e9d", "on-primary": "#381385", "tertiary-fixed": "#6ffbbe", "outline-variant": "#494552", "surface-tint": "#cebdff", "surface": "#15121e", "inverse-on-surface": "#322e3c", "on-secondary": "#332664", "secondary-container": "#4a3d7c", "on-background": "#e7dff1", "primary-fixed": "#e8ddff", "secondary-fixed-dim": "#ccbeff" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "margin-mobile": "1rem", "gutter": "1rem", "margin": "1.25rem", "space-lg": "1.5rem", "space-xl": "2.25rem", "space-sm": "0.5rem", "space-md": "1rem", "gutter-mobile": "0.75rem", "space-xs": "0.25rem" }, fontFamily: { "label-caps": ["Plus Jakarta Sans"], "headline-lg": ["Playfair Display"], "label-lg": ["Plus Jakarta Sans"], "display-lg-mobile": ["Playfair Display"], "display-lg": ["Playfair Display"], "headline-sm": ["Playfair Display"], "metric-numeral": ["Playfair Display"], "label-md": ["Plus Jakarta Sans"], "body-md": ["Plus Jakarta Sans"], "body-lg": ["Plus Jakarta Sans"], "body-sm": ["Plus Jakarta Sans"], "headline-md": ["Playfair Display"] }, fontSize: { "label-caps": ["10px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }], "headline-lg": ["28px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "label-lg": ["13px", { "lineHeight": "18px", "letterSpacing": "0.04em", "fontWeight": "600" }], "display-lg-mobile": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "400" }], "display-lg": ["40px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "400" }], "headline-sm": ["18px", { "lineHeight": "26px", "letterSpacing": "0.01em", "fontWeight": "600" }], "metric-numeral": ["36px", { "lineHeight": "40px", "letterSpacing": "-0.03em", "fontWeight": "400" }], "label-md": ["11px", { "lineHeight": "16px", "letterSpacing": "0.06em", "fontWeight": "600" }], "body-md": ["14px", { "lineHeight": "21px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-lg": ["16px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "400" }], "body-sm": ["12px", { "lineHeight": "18px", "letterSpacing": "0.02em", "fontWeight": "400" }], "headline-md": ["22px", { "lineHeight": "30px", "letterSpacing": "0em", "fontWeight": "500" }] } } } };</script><style>@layer base{html,body{width:100vw;margin:0;padding:0;background-color:#15121e;color:#e7dff1;}body{overscroll-behavior:none;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface font-body-md text-on-surface antialiased flex flex-col min-h-screen selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 inset-x-0 z-50 bg-surface/85 backdrop-blur-xl shadow-[0_4px_24px_rgba(15,12,24,0.45)] pt-safe"><div class="h-16 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Voltar" class="w-11 h-11 -ml-2 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors active:scale-95" onclick="history.back()"><span class="material-symbols-outlined text-[22px]">arrow_back_ios_new</span></button><img alt="Chakra Flow Logo" class="h-7 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1WOsx4_sGUcyvNqO56n_4xIwpNKYvFYILJdKzh9S4yO5j-WdtTkDFm0DNMt5fQ7xzTadSn2eXgEoH7SILbNjS4gzKGjBEkeTKwDuNjv0hbF-yN6LLPftNU75xOmqGmjnT-INwlZMIzMcS3mN_fh2dvD04LhH-TH21kcvv58ispOOb4MK7nFF71joNwTdleERuRDAr1NcqfD1j6K_QvvrFEhCe08zhEONkZl7hVCsoJiZAKilT3Ms5qsmtE"/><h1 class="font-headline-sm text-headline-sm tracking-tight text-on-surface truncate max-w-[190px]">Detalhes Do Cliente</h1></div><div class="flex items-center gap-space-sm"><button aria-label="Opções Clínicas" class="w-11 h-11 rounded-full flex items-center justify-center text-on-surface-variant hover:text-on-surface transition-colors"><span class="material-symbols-outlined text-[22px]">more_vert</span></button><img alt="Profile" class="w-8 h-8 rounded-full object-cover shadow-[0_0_12px_rgba(167,139,250,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBb3FY_DkiPnLcUIbQm01Gb-yr4VJohinuACBgAcGRiXnuSKiBOw0e0haJwety3douZnNR7b2sjz0KJxqX-LDKGeCFNHkES27XR_Cl2s_QA2thXSkDnoJ-24yCvojy1w2uNtfdDigyJpoPfNeVJJ4er1I7-BuTJ9cz9N3gMSxyLXQwOB9_rDZlHCK5enTSXvyaBt59FNMx4ezvyryRbyoWh7Y9beZTTrkDcTQco3bv4xSK8MCV8DUj4"/></div></div></header><main class="flex-1 flex flex-col relative w-full px-margin pt-16 pb-safe bg-surface"><div class="flex flex-col w-full pb-8 space-y-6">
+<!-- Sub-bar & Context Actions -->
+<div class="flex items-center justify-between pt-2">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary shadow-[0_0_8px_rgba(78,222,163,0.6)]"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-widest">Ficha Clínica Ativa</span>
+</div>
+<div class="flex items-center gap-2">
+<button class="px-3.5 py-1.5 rounded-full bg-surface-container-high text-on-surface text-body-sm font-body-sm hover:bg-surface-bright transition-all active:scale-95 flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[15px] text-primary">edit</span>
+        Editar
+      </button>
+<button class="px-3.5 py-1.5 rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg shadow-[0_0_12px_rgba(167,139,250,0.35)] hover:opacity-95 transition-all active:scale-95 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">add</span>
+        Nova
+      </button>
+</div>
+</div>
+<!-- Client Header Card (Quiet Luxury Aesthetic) -->
+<section class="relative overflow-hidden rounded-lg bg-surface-container-low p-6 shadow-xl">
+<div class="absolute -top-12 -right-12 w-48 h-48 rounded-full bg-primary/10 blur-3xl pointer-events-none"></div>
+<div class="flex flex-col space-y-5 relative z-10">
+<div class="flex items-start gap-4">
+<!-- Monogram Luxury Avatar -->
+<div class="relative flex-shrink-0 w-16 h-16 rounded-full bg-surface-container-highest flex items-center justify-center shadow-[inset_0_1px_1px_rgba(255,255,255,0.1)]">
+<span class="font-headline-md text-headline-md text-primary tracking-wide">MA</span>
+<span class="absolute bottom-0 right-0 w-4 h-4 rounded-full bg-surface-container-low flex items-center justify-center">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+</span>
+</div>
+<div class="flex flex-col min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<h2 class="font-headline-md text-headline-md text-on-surface truncate">Mariana Alencar</h2>
+<span class="font-label-caps text-label-caps px-2 py-0.5 rounded-full bg-secondary-container/60 text-secondary-fixed">34 ANOS</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1 mt-0.5 truncate">
+<span class="material-symbols-outlined text-[14px] text-primary">call</span>
+            (11) 98765-4321
+            <span class="mx-1 opacity-40">•</span>
+<span class="truncate">mariana.alencar@email.com</span>
+</p>
+</div>
+</div>
+<!-- Protocol Pill / Banner -->
+<div class="rounded-xl bg-surface-container p-3.5 flex items-start gap-3">
+<span class="material-symbols-outlined text-primary-container text-[20px] mt-0.5 flex-shrink-0">vital_signs</span>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Protocolo Personalizado</span>
+<p class="font-body-md text-body-md text-on-surface leading-tight font-medium">Harmonização de Ansiedade &amp; Alinhamento de Chakras Sutis</p>
+</div>
+</div>
+<!-- Quick Metrics Grid -->
+<div class="grid grid-cols-3 gap-2 pt-1">
+<div class="bg-surface-container-high/60 rounded-xl p-3 flex flex-col items-center justify-center text-center">
+<span class="font-metric-numeral text-headline-md text-primary font-normal">6</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mt-0.5">Sessões</span>
+</div>
+<div class="bg-surface-container-high/60 rounded-xl p-3 flex flex-col items-center justify-center text-center">
+<span class="font-headline-sm text-headline-sm text-on-surface font-semibold">12/Ago</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mt-0.5">1ª Sessão</span>
+</div>
+<div class="bg-surface-container-high/60 rounded-xl p-3 flex flex-col items-center justify-center text-center">
+<div class="flex items-baseline gap-0.5">
+<span class="font-metric-numeral text-headline-md text-tertiary font-normal">74</span>
+<span class="text-body-sm text-tertiary font-semibold">%</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mt-0.5">Índice Médio</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Editorial Insight Bar -->
+<div class="rounded-lg bg-surface-container p-4 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-primary-fixed">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+<div>
+<p class="font-body-md text-body-md text-on-surface font-medium">Equilíbrio Geral Expandido</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">+23.2% de coerência energética desde o início</p>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-surface-container-highest text-tertiary font-label-caps text-label-caps tracking-wider">ÓTIMO</span>
+</div>
+<!-- Visual Chakra Evolution Comparative -->
+<section class="space-y-4">
+<div class="flex items-center justify-between px-1">
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Evolução por Centro Energético</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Sessão #1 vs Sessão #6 (Atual)</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-surface-bright"></span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">1ª</span>
+</div>
+<div class="flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_6px_rgba(206,189,255,0.7)]"></span>
+<span class="font-label-caps text-label-caps text-on-surface font-bold">Atual</span>
+</div>
+</div>
+</div>
+<!-- Comparative Chakra List with Dual-Bar Gauges -->
+<div class="rounded-lg bg-surface-container-low p-5 space-y-4 shadow-lg">
+<!-- 1. Raiz -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#EF4444] shadow-[0_0_8px_rgba(239,68,68,0.4)]"></span>
+<span class="font-body-md text-body-md font-medium text-on-surface">1. Muladhara (Raiz)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">45% → <strong class="text-on-surface font-semibold">82%</strong></span>
+<span class="font-label-caps text-label-caps text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded">+37%</span>
+</div>
+</div>
+<div class="relative w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-surface-bright rounded-full" style="width: 45%;"></div>
+<div class="absolute inset-y-0 left-0 bg-[#EF4444] rounded-full opacity-90 shadow-[0_0_6px_rgba(239,68,68,0.8)]" style="width: 82%;"></div>
+</div>
+</div>
+<!-- 2. Sacral -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#F97316] shadow-[0_0_8px_rgba(249,115,22,0.4)]"></span>
+<span class="font-body-md text-body-md font-medium text-on-surface">2. Svadhisthana (Sacral)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">52% → <strong class="text-on-surface font-semibold">76%</strong></span>
+<span class="font-label-caps text-label-caps text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded">+24%</span>
+</div>
+</div>
+<div class="relative w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-surface-bright rounded-full" style="width: 52%;"></div>
+<div class="absolute inset-y-0 left-0 bg-[#F97316] rounded-full opacity-90 shadow-[0_0_6px_rgba(249,115,22,0.8)]" style="width: 76%;"></div>
+</div>
+</div>
+<!-- 3. Plexo Solar -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#EAB308] shadow-[0_0_8px_rgba(234,179,8,0.4)]"></span>
+<span class="font-body-md text-body-md font-medium text-on-surface">3. Manipura (Plexo Solar)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">40% → <strong class="text-on-surface font-semibold">70%</strong></span>
+<span class="font-label-caps text-label-caps text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded">+30%</span>
+</div>
+</div>
+<div class="relative w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-surface-bright rounded-full" style="width: 40%;"></div>
+<div class="absolute inset-y-0 left-0 bg-[#EAB308] rounded-full opacity-90 shadow-[0_0_6px_rgba(234,179,8,0.8)]" style="width: 70%;"></div>
+</div>
+</div>
+<!-- 4. Cardíaco -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#10B981] shadow-[0_0_8px_rgba(16,185,129,0.4)]"></span>
+<span class="font-body-md text-body-md font-medium text-on-surface">4. Anahata (Cardíaco)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">60% → <strong class="text-on-surface font-semibold">88%</strong></span>
+<span class="font-label-caps text-label-caps text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded">+28%</span>
+</div>
+</div>
+<div class="relative w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-surface-bright rounded-full" style="width: 60%;"></div>
+<div class="absolute inset-y-0 left-0 bg-[#10B981] rounded-full opacity-90 shadow-[0_0_6px_rgba(16,185,129,0.8)]" style="width: 88%;"></div>
+</div>
+</div>
+<!-- 5. Laríngeo -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#06B6D4] shadow-[0_0_8px_rgba(6,182,212,0.4)]"></span>
+<span class="font-body-md text-body-md font-medium text-on-surface">5. Vishuddha (Laríngeo)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">50% → <strong class="text-on-surface font-semibold">74%</strong></span>
+<span class="font-label-caps text-label-caps text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded">+24%</span>
+</div>
+</div>
+<div class="relative w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-surface-bright rounded-full" style="width: 50%;"></div>
+<div class="absolute inset-y-0 left-0 bg-[#06B6D4] rounded-full opacity-90 shadow-[0_0_6px_rgba(6,182,212,0.8)]" style="width: 74%;"></div>
+</div>
+</div>
+<!-- 6. Frontal -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#6366F1] shadow-[0_0_8px_rgba(99,102,241,0.4)]"></span>
+<span class="font-body-md text-body-md font-medium text-on-surface">6. Ajna (Terceiro Olho)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">65% → <strong class="text-on-surface font-semibold">82%</strong></span>
+<span class="font-label-caps text-label-caps text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded">+17%</span>
+</div>
+</div>
+<div class="relative w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-surface-bright rounded-full" style="width: 65%;"></div>
+<div class="absolute inset-y-0 left-0 bg-[#6366F1] rounded-full opacity-90 shadow-[0_0_6px_rgba(99,102,241,0.8)]" style="width: 82%;"></div>
+</div>
+</div>
+<!-- 7. Coronário -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#A855F7] shadow-[0_0_8px_rgba(168,85,247,0.4)]"></span>
+<span class="font-body-md text-body-md font-medium text-on-surface">7. Sahasrara (Coronário)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">70% → <strong class="text-on-surface font-semibold">85%</strong></span>
+<span class="font-label-caps text-label-caps text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded">+15%</span>
+</div>
+</div>
+<div class="relative w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-surface-bright rounded-full" style="width: 70%;"></div>
+<div class="absolute inset-y-0 left-0 bg-[#A855F7] rounded-full opacity-90 shadow-[0_0_6px_rgba(168,85,247,0.8)]" style="width: 85%;"></div>
+</div>
+</div>
+<!-- 8. Estrela da Alma -->
+<div class="flex flex-col space-y-1.5">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-[#F59E0B] shadow-[0_0_8px_rgba(245,158,11,0.4)]"></span>
+<span class="font-body-md text-body-md font-medium text-on-surface">8. Sutra (Estrela da Alma)</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm text-on-surface-variant">58% → <strong class="text-on-surface font-semibold">79%</strong></span>
+<span class="font-label-caps text-label-caps text-tertiary bg-surface-container-highest px-1.5 py-0.5 rounded">+21%</span>
+</div>
+</div>
+<div class="relative w-full h-2 rounded-full bg-surface-container-highest overflow-hidden">
+<div class="absolute inset-y-0 left-0 bg-surface-bright rounded-full" style="width: 58%;"></div>
+<div class="absolute inset-y-0 left-0 bg-[#F59E0B] rounded-full opacity-90 shadow-[0_0_6px_rgba(245,158,11,0.8)]" style="width: 79%;"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Vertical Session Timeline -->
+<section class="space-y-3">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Histórico de Sessões</h3>
+<span class="font-label-caps text-label-caps text-on-surface-variant tracking-wider">CRONOLOGIA</span>
+</div>
+<div class="relative pl-6 space-y-4">
+<!-- Vertical Connecting Line -->
+<div class="absolute top-3 bottom-3 left-2 w-0.5 bg-surface-container-highest"></div>
+<!-- Timeline Item 1 -->
+<div class="relative flex flex-col rounded-lg bg-surface-container-low p-4 shadow-md transition-all hover:bg-surface-container cursor-pointer">
+<span class="absolute -left-[22px] top-4 w-3.5 h-3.5 rounded-full bg-primary ring-4 ring-surface shadow-[0_0_8px_rgba(206,189,255,0.6)]"></span>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps text-primary">24 / OUT / 2024</span>
+<span class="px-2 py-0.5 rounded-full bg-tertiary-container/20 text-tertiary font-label-caps text-label-caps">78% GLOBAL</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface text-[16px] leading-tight font-medium">Sessão #6 — Harmonização Cardíaca Profunda</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Aplicação de frequência 528Hz e quartzo rosa. Redução substancial da sensação de aperto torácico.</p>
+</div>
+<!-- Timeline Item 2 -->
+<div class="relative flex flex-col rounded-lg bg-surface-container-low p-4 shadow-md transition-all hover:bg-surface-container cursor-pointer">
+<span class="absolute -left-[22px] top-4 w-3 h-3 rounded-full bg-surface-bright ring-4 ring-surface"></span>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">10 / OUT / 2024</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary-fixed font-label-caps text-label-caps">72% GLOBAL</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface text-[16px] leading-tight font-medium">Sessão #5 — Desbloqueio de Laríngeo e Plexo Solar</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Integração da comunicação e limites pessoais. Estímulo das frequências 741Hz.</p>
+</div>
+<!-- Timeline Item 3 -->
+<div class="relative flex flex-col rounded-lg bg-surface-container-low p-4 shadow-md transition-all hover:bg-surface-container cursor-pointer">
+<span class="absolute -left-[22px] top-4 w-3 h-3 rounded-full bg-surface-bright ring-4 ring-surface"></span>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-caps text-label-caps text-on-surface-variant">26 / SET / 2024</span>
+<span class="px-2 py-0.5 rounded-full bg-surface-container-highest text-secondary-fixed font-label-caps text-label-caps">66% GLOBAL</span>
+</div>
+<p class="font-headline-sm text-headline-sm text-on-surface text-[16px] leading-tight font-medium">Sessão #4 — Alinhamento com Cristais de Quartzo</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Foco no assentamento do chakra básico e alívio do estresse cognitivo crônico.</p>
+</div>
+</div>
+</section>
+<!-- Sticky-feel Primary Action Footer Button -->
+<div class="pt-2">
+<button class="w-full min-h-[54px] rounded-full bg-primary-container text-on-primary font-label-lg text-label-lg shadow-[0_8px_24px_rgba(167,139,250,0.35)] hover:shadow-[0_0_28px_rgba(167,139,250,0.5)] transition-all active:scale-[0.98] flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[20px]">spa</span>
+<span>Iniciar Nova Sessão para Mariana</span>
+</button>
+</div>
+</div></main></body></html>

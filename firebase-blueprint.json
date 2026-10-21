@@ -1,0 +1,88 @@
+{
+  "entities": {
+    "Practitioner": {
+      "title": "Practitioner",
+      "description": "Perfil e branding do terapeuta holístico",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "marcaCompleta": { "type": "string", "maxLength": 150 },
+        "marcaCurta": { "type": "string", "maxLength": 50 },
+        "brandName": { "type": "string", "maxLength": 150 },
+        "name": { "type": "string", "maxLength": 100 },
+        "title": { "type": "string", "maxLength": 150 },
+        "tituloProfissional": { "type": "string", "maxLength": 150 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "email": { "type": "string", "maxLength": 150 },
+        "website": { "type": "string", "maxLength": 150 },
+        "address": { "type": "string", "maxLength": 250 },
+        "logoUrl": { "type": "string", "maxLength": 1000 },
+        "openingStatement": { "type": "string", "maxLength": 1000 },
+        "generalGuidance": { "type": "string", "maxLength": 1000 },
+        "signatureText": { "type": "string", "maxLength": 150 },
+        "rangeSummaries": { "type": "object" },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["userId", "name"]
+    },
+    "Client": {
+      "title": "Client",
+      "description": "Clientes cadastrados no consultório",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "name": { "type": "string", "maxLength": 120 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "email": { "type": "string", "maxLength": 150 },
+        "age": { "type": "string", "maxLength": 20 },
+        "protocol": { "type": "string", "maxLength": 200 },
+        "notes": { "type": "string", "maxLength": 2000 },
+        "status": { "type": "string", "maxLength": 30 },
+        "lastSessionDate": { "type": "string", "maxLength": 50 },
+        "sessionCount": { "type": "number" },
+        "averageScore": { "type": "number" },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["userId", "name"]
+    },
+    "Session": {
+      "title": "Session",
+      "description": "Atendimento de bioalinhamento energético com pontuações dos 8 centros",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "maxLength": 128 },
+        "clientId": { "type": "string", "maxLength": 128 },
+        "clientName": { "type": "string", "maxLength": 120 },
+        "sessionNumber": { "type": "number" },
+        "sessionDate": { "type": "string", "maxLength": 50 },
+        "durationMinutes": { "type": "number" },
+        "sessionType": { "type": "string", "maxLength": 50 },
+        "overallScore": { "type": "number" },
+        "attentionCount": { "type": "number" },
+        "scores": { "type": "object" },
+        "clinicalNotes": { "type": "string", "maxLength": 3000 },
+        "recommendations": { "type": "object" },
+        "previousSessionScores": { "type": "object" },
+        "createdAt": { "type": "string", "maxLength": 50 },
+        "updatedAt": { "type": "string", "maxLength": 50 }
+      },
+      "required": ["userId", "clientId", "clientName", "sessionDate", "overallScore", "attentionCount"]
+    }
+  },
+  "firestore": {
+    "/practitioners/{practitionerId}": {
+      "schema": { "$ref": "entities.Practitioner" },
+      "description": "Dados do terapeuta logado e branding personalizado com resumos por faixa"
+    },
+    "/clients/{clientId}": {
+      "schema": { "$ref": "entities.Client" },
+      "description": "Interagentes cadastrados pelo terapeuta"
+    },
+    "/sessions/{sessionId}": {
+      "schema": { "$ref": "entities.Session" },
+      "description": "Sessões e laudos de bioalinhamento dos 8 chakras"
+    }
+  }
+}
