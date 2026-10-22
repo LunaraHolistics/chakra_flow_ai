@@ -1,12 +1,12 @@
 {
-  "projectId": "biosync3",
-  "appId": "1:356402549231:web:ba34c0852c243f08a7e61a",
-  "apiKey": "AIzaSyDFOEO3ZQUw6_oQ3wXr64Ay_fK9q3kbqbQ",
-  "authDomain": "biosync3.firebaseapp.com",
-  "firestoreDatabaseId": "ai-studio-chakraflow-7a34aa84-6c42-47a9-89d1-f096311f5791",
-  "storageBucket": "biosync3.firebasestorage.app",
-  "messagingSenderId": "356402549231",
+  "projectId": "chakra-flow-lunara",
+  "appId": "1:888761618925:web:b3c3b0a9393a926128d7e4",
+  "apiKey": "AIzaSyAS_DTABuAC_cmku-lcmRJuhWqeS4_mfIY",
+  "authDomain": "chakra-flow-lunara.firebaseapp.com",
+  "firestoreDatabaseId": "(default)",
+  "storageBucket": "chakra-flow-lunara.firebasestorage.app",
+  "messagingSenderId": "888761618925",
   "measurementId": "",
-  "oAuthClientId": "356402549231-5gr658225rr69f2n125vvn1m7705da6c.apps.googleusercontent.com",
+  "oAuthClientId": "",
   "recaptchaSiteKey": ""
 }
