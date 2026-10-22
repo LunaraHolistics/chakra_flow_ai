@@ -2,61 +2,50 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
-    // Default deny catch-all
+    function signedIn() { return request.auth != null; }
+
+    // Catch-all: nada é permitido a menos que um bloco específico abaixo libere
     match /{document=**} {
       allow read, write: if false;
     }
 
-    function isSignedIn() {
-      return request.auth != null;
+    // Practitioner: escopo pelo campo userId (id do doc é livre)
+    match /practitioners/{pid} {
+      allow get, list: if signedIn() && resource.data.userId == request.auth.uid;
+      allow create:    if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update:    if signedIn() && resource.data.userId == request.auth.uid
+                            && request.resource.data.userId == request.auth.uid;
+      allow delete:    if signedIn() && resource.data.userId == request.auth.uid;
     }
 
-    function isValidId(id) {
-      return id is string && id.size() > 0 && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    // Clients
+    match /clients/{cid} {
+      allow get, list: if signedIn() && resource.data.userId == request.auth.uid;
+      allow create:    if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update:    if signedIn() && resource.data.userId == request.auth.uid
+                            && request.resource.data.userId == request.auth.uid;
+      allow delete:    if signedIn() && resource.data.userId == request.auth.uid;
     }
 
-    function incoming() {
-      return request.resource.data;
+    // Sessions (+ scores como subcoleção, defensivo)
+    match /sessions/{sid} {
+      allow get, list: if signedIn() && resource.data.userId == request.auth.uid;
+      allow create:    if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update:    if signedIn() && resource.data.userId == request.auth.uid
+                            && request.resource.data.userId == request.auth.uid;
+      allow delete:    if signedIn() && resource.data.userId == request.auth.uid;
+
+      match /scores/{docId} {
+        allow read, write: if signedIn()
+          && get(/databases/$(database)/documents/sessions/$(sid)).data.userId == request.auth.uid;
+      }
     }
 
-    function existing() {
-      return resource.data;
-    }
-
-    function isOwner(userId) {
-      return isSignedIn() && request.auth.uid == userId;
-    }
-
-    // Practitioners collection
-    match /practitioners/{practitionerId} {
-      allow get: if isSignedIn() && (resource.data.userId == request.auth.uid || practitionerId == request.auth.uid);
-      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
-      allow create: if isSignedIn() && incoming().userId == request.auth.uid && isValidId(practitionerId);
-      allow update: if isSignedIn() && existing().userId == request.auth.uid && incoming().userId == existing().userId;
-      allow delete: if isSignedIn() && existing().userId == request.auth.uid;
-    }
-
-    // Clients collection
-    match /clients/{clientId} {
-      allow get: if isSignedIn() && resource.data.userId == request.auth.uid;
-      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
-      allow create: if isSignedIn() && incoming().userId == request.auth.uid && isValidId(clientId);
-      allow update: if isSignedIn() && existing().userId == request.auth.uid && incoming().userId == existing().userId;
-      allow delete: if isSignedIn() && existing().userId == request.auth.uid;
-    }
-
-    // Sessions collection
-    match /sessions/{sessionId} {
-      allow get: if isSignedIn() && resource.data.userId == request.auth.uid;
-      allow list: if isSignedIn() && resource.data.userId == request.auth.uid;
-      allow create: if isSignedIn() && incoming().userId == request.auth.uid && isValidId(sessionId);
-      allow update: if isSignedIn() && existing().userId == request.auth.uid && incoming().userId == existing().userId;
-      allow delete: if isSignedIn() && existing().userId == request.auth.uid;
-    }
-
-    // Test connection doc used in boot test
-    match /test/{docId} {
-      allow read: if true;
+    // Scores como coleção plana (defensivo, caso o app use este formato)
+    match /session_chakra_scores/{docId} {
+      allow get, list: if signedIn() && resource.data.userId == request.auth.uid;
+      allow create:    if signedIn() && request.resource.data.userId == request.auth.uid;
+      allow update, delete: if signedIn() && resource.data.userId == request.auth.uid;
     }
   }
 }

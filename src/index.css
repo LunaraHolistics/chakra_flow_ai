@@ -68,4 +68,41 @@
     break-inside: avoid !important;
     page-break-inside: avoid !important;
   }
+/* src/index.css - Adicione isso no final do arquivo */
+
+@media print {
+  /* Configuração da página A4 com margens seguras */
+  @page {
+    size: A4 portrait;
+    margin: 1.5cm 1.5cm 2cm 1.5cm; /* Topo, Direita, Baixo (maior para rodapé), Esquerda */
+  }
+
+  /* Força fundo branco e texto escuro, ignorando o tema dark do app */
+  body {
+    background-color: white !important;
+    color: #111827 !important; /* Cinza muito escuro, melhor que preto puro para leitura */
+    font-size: 12pt !important;
+    line-height: 1.5 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important; /* Garante que as cores dos chakras saiam na impressão */
+  }
+
+  /* Esconde botões e elementos da interface do app na hora de imprimir */
+  .no-print, button, nav, header {
+    display: none !important;
+  }
+
+  /* Evita que um card de chakra seja cortado ao meio entre duas páginas */
+  .print-break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  /* Ajuste específico para o amarelo (Plexo Solar) ter contraste no fundo branco */
+  .print-chakra-yellow {
+    background-color: #fef9c3 !important; /* Amarelo bem clarinho (Tailwind yellow-100) */
+    color: #854d0e !important; /* Texto marrom/dourado escuro para contraste (yellow-800) */
+    border-color: #eab308 !important; /* Borda amarela visível (yellow-500) */
+  }
+}
 }
